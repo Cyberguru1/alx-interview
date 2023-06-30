@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-
+"""
+Desc: alx_interview
+cyberguru 
+"""
 
 def pascal_triangle(n):
     """
@@ -22,6 +25,4 @@ def pascal_triangle(n):
             new_array.append(next[i] + next[i+1])
         new_array.append(1)
         rows.append(new_array)
-    print(rows)
-
-pascal_triangle(5)
+    return rows
