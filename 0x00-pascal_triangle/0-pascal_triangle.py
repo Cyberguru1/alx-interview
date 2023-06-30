@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 """
-Desc: alx_interview
+Desc: alx_interview on pascal triangle
+
 cyberguru 
 """
+
 
 def pascal_triangle(n):
     """
