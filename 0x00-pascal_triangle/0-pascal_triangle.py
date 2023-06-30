@@ -14,7 +14,7 @@ def pascal_triangle(n):
     """
 
     if n <= 0 :
-        return []
+        return [[]]
 
     rows = [[1]]
 
@@ -24,7 +24,7 @@ def pascal_triangle(n):
 
         for i in range(x):
             new_array.append(prev_array[i] + prev_array[i+1])
-            
+
         new_array.append(1)
         rows.append(new_array)
 
