@@ -19,10 +19,10 @@ def pascal_triangle(n):
     rows = [[1]]
 
     for x in range(n-1):
-        next = rows[x]
+        prev_array = rows[x]
         new_array = [1]
         for i in range(x):
-            new_array.append(next[i] + next[i+1])
+            new_array.append(prev_array[i] + prev_array[i+1])
         new_array.append(1)
         rows.append(new_array)
     return rows
