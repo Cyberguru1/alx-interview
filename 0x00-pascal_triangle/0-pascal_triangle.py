@@ -6,18 +6,27 @@ Author: cyberguru
 
 
 def pascal_triangle(n):
-    '''Creates a list of lists of integers representing
-    the Pascal's triangle of a given integer.
     '''
-    triangle = []
-    if type(n) is not int or n <= 0:
-        return triangle
-    for i in range(n):
-        line = []
-        for j in range(i + 1):
-            if j == 0 or j == i:
-                line.append(1)
-            elif i > 0 and j > 0:
-                line.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
-        triangle.append(line)
-    return triangle
+    function to return index of triangle
+
+    Args:
+        n (int): index of the triangle
+    Returns: nth rows of the triangle
+    '''
+
+    if n <= 0 :
+        return [[]]
+
+    rows = [[1]]
+
+    for x in range(n-1):
+        prev_array = rows[x]
+        new_array = [1]
+
+        for i in range(x):
+            new_array.append(prev_array[i] + prev_array[i+1])
+
+        new_array.append(1)
+        rows.append(new_array)
+
+    return rows
