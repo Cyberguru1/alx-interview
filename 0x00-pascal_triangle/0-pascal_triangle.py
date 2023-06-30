@@ -1,19 +1,18 @@
 #!/usr/bin/env python
-"""
+'''
 Desc: alx_interview on pascal triangle
-
-cyberguru 
-"""
+Author: cyberguru 
+'''
 
 
 def pascal_triangle(n):
-	"""
+	'''
 	function to return index of triangle
 
 	Args:
 		n (int): index of the triangle
 	Returns: nth rows of the triangle
-	"""
+	'''
 
 	if n <= 0 :
 		return [[]]
