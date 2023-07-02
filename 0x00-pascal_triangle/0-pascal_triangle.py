@@ -3,8 +3,6 @@
 Desc: alx_interview on pascal triangle
 Author: cyberguru 
 '''
-
-
 def pascal_triangle(n):
     '''
     function to return index of triangle
