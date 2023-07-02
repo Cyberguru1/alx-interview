@@ -12,6 +12,7 @@ def pascal_triangle(n):
         n (int): index of the triangle
     Returns: nth rows of the triangle
     '''
+
     if n <= 0 :
         return []
 
