@@ -1,8 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 '''
 Desc: alx_interview on pascal triangle
-Author: cyberguru 
+Author: cyberguru
 '''
+
+
 def pascal_triangle(n):
     '''
     function to return index of triangle
