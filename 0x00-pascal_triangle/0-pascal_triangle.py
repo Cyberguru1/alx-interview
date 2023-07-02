@@ -13,7 +13,7 @@ def pascal_triangle(n):
     Returns: nth rows of the triangle
     '''
 
-    if type(n) is not int or n <= 0 :
+    if n <= 0:
         return []
 
     rows = [[1]]
