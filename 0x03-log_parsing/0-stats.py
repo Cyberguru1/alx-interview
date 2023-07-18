@@ -1,46 +1,54 @@
 #!/usr/bin/python3
-
+"""
+Function to pass log files
+"""
 import sys
 
 
-count = 0
-fileSize = 0
-statusCodes = [200, 301, 400, 401, 403, 404, 405, 500]
-mappings =  {i:0 for i in statusCodes}
-
-def print_mappings():
+def print_m():
     """
-    Methond to print the mappings
     Args:
-         None
+        None
     Returns:
-         None
+        Nothing
     """
-    print("File size: {}".format(fileSize))
-    for i in mappings:
-        if mappings[i] == 0:
-            continue
-        print(f"{i}: {mappings[i]}")
+
+    print("File size: {}".format(total_file_size))
+    for key, val in sorted(dictStatCode.items()):
+        if val != 0:
+            print("{}: {}".format(key, val))
 
 
-while (out:=sys.stdin.readline()):
-    try:
-        splited = out.strip().split(" ")
-        sCode = int(splited[-2])
-        fSize = splited[-1]
+total_file_size = 0
+code = 0
+counter = 0
+dictStatCode = {"200": 0,
+           "301": 0,
+           "400": 0,
+           "401": 0,
+           "403": 0,
+           "404": 0,
+           "405": 0,
+           "500": 0}
 
-        if sCode in statusCodes:
+try:
+    for line in sys.stdin:
+        current_line = line.split()  # trimming excessspaces
+        current_line = current_line[::-1]  # reversing the array
 
-            if sCode in mappings:
-                mappings[sCode] += 1
-            else:
-                mappings[sCode] = 1
+        if len(current_line) > 2:
+            counter += 1
 
-        if count == 10:
-            print_mappings()
-            count = 0
+            if counter <= 10:
+                total_file_size += int(current_line[0])  # save file size
+                code = current_line[1] 
 
-        count += 1
-        fileSize += int(fSize)
-    except KeyboardInterrupt:
-        print_mappings()
+                if (code in dictStatCode.keys()):
+                    dictStatCode[code] += 1
+
+            if (counter == 10):
+                print_m()
+                counter = 0
+
+finally:
+    print_m()
