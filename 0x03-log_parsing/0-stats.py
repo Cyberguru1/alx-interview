@@ -5,7 +5,7 @@ Function to pass log files
 import sys
 
 
-def print_m():
+def print_m(dictStatCode, total_file_size):
     """
     Args:
         None
@@ -47,8 +47,8 @@ try:
                     dictStatCode[code] += 1
 
             if (counter == 10):
-                print_m()
+                print_m(dictStatCode, total_file_size)
                 counter = 0
 
 finally:
-    print_m()
+    print_m(dictStatCode, total_file_size)
