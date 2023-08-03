@@ -24,8 +24,10 @@ def backtrack(r, n, columns, pos, neg, board):
         return
 
     for c in range(n):
+
         if c in columns or (r + c) in pos or (r - c) in neg:
             continue
+
         columns.add(c)
         pos.add(r + c)
         neg.add(r - c)
