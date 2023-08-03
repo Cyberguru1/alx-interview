@@ -35,6 +35,11 @@ def backtrack(r, n, columns, pos, neg, board):
 
         backtrack(r+1, n, columns, pos, neg, board)
 
+        columns.remove(c)
+        pos.remove(r + c)
+        neg.remove(r - c)
+        board[r][c] = 0
+
 
 def nqueens(n):
     """_summary_
