@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-""" Nqueens algorithm in python"""
+#!/usr/bin/python3
+"""Nqueens algorithm in python"""
 import sys
 
 
